@@ -54,16 +54,25 @@ Enjoy it!
 
 ## Functions
 
-* StrLength(char* source)=char - Returns the length of a string
-* StrCopy(char* target, char* source) - Copy the source string on the target string
-* StrConcatenate(char* target, char* source) - Appends a copy of the source string to the target string
-* StrCompare(char* string1, char* string2)=boolean - Compare two strings
+### Functions similar to some functions from C String standard library
 
+| Function | Description |
+| :---     | :---        |
+| char **StrLength**(char* source) | Returns the length of a string |
+| **StrCopy**(char* target, char* source) | Copy the source string on the target string |
+| **StrConcatenate**(char* target, char* source) | Appends a copy of the source string to the target string |
+| boolean **StrCompare**(char* string1, char* string2) | Compare two strings |
 
-* LEFT(char* target, char* source, char length) - Returns a section of the source string with the given length. Similar as MSX BASIC instruction LEFT$ 
-* RIGHT(char* target, char* source, char rightLength) - Returns a section to the right of the source string with the given length. Similar as MSX BASIC instruction RIGHT$
-* MID(char* target, char* source, char leftPos, char length) - Returns a section of the source string from the given position and length. Similar as MSX BASIC instruction MID$
-* INSTR(char* source, char asciicode, char offset)=char - Find the first occurrence of a character in the given string. Similar as MSX BASIC instruction INSTR 
-* STRING(char* target, char length, char asciicode) - Generates a string, composed with same char. Similar as MSX BASIC instruction STRING$
-* SPACE(char* target, char length) - Generates a string composed with spaces. Similar as MSX BASIC instruction SPACE$ 
+<br/>
+
+### Functions similar to MSX BASIC instructions:
+
+| Function | Description |
+| :---     | :---        |
+| **LEFT**(char* target, char* source, char length) | Returns a section of the source string with the given length. |
+| **RIGHT**(char* target, char* source, char rightLength) | Returns a section to the right of the source string with the given length. |
+| **MID**(char* target, char* source, char leftPos, char length) | Returns a section of the source string from the given position and length. |
+| char **INSTR**(char* source, char asciicode, char offset) | Find the first occurrence of a character in the given string. |
+| **STRING**(char* target, char length, char asciicode) | Generates a string, composed with same char. |
+
 

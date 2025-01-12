@@ -89,7 +89,7 @@ result=StrLength("Hello World!");	//result=12
 </pre></td></tr>
 </table>
 
-
+<br/>
 
 ### 4.2 StrCopy
 
@@ -107,7 +107,7 @@ StrCopy(text,string);
 </pre></td></tr>
 </table>
 
-
+<br/>
 
 ### 4.3 StrConcatenate
 
@@ -127,6 +127,7 @@ StrConcatenate(text,testCat);
 </pre></td></tr>
 </table>
 
+<br/>
 
 ### 4.4 StrCompare
 
@@ -146,6 +147,7 @@ result = StrCompare("EqU4L","EqU4L");		//must return true
 </pre></td></tr>
 </table>
 
+<br/>
 
 ### 4.5 LEFT
 
@@ -164,7 +166,7 @@ LEFT(text,string1,11);	//text="Lorem ipsum"
 </pre></td></tr>
 </table>
 
-
+<br/>
 
 ### 4.6 RIGHT
 
@@ -183,7 +185,7 @@ RIGHT(text,string1,16);	//text="adipiscing elit."
 </pre></td></tr>
 </table>
 
-
+<br/>
 
 ### 4.7 MID
 
@@ -203,7 +205,7 @@ MID(text,string1,12,14);	//text="dolor sit amet"
 </pre></td></tr>
 </table>
 
-
+<br/>
 
 ### 4.8 INSTR
 
@@ -219,11 +221,11 @@ MID(text,string1,12,14);	//text="dolor sit amet"
 char result;
 char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 result=INSTR(string1,' ',0);	//result=6
-result=INSTR(string1,32,7);		//result=12
+result=INSTR(string1,32,7);	//result=12
 </pre></td></tr>
 </table>
 
-
+<br/>
 
 ### 4.9 STRING
 
@@ -255,4 +257,4 @@ STRING(text,20,'-');	//text="--------------------"
 ---
 
 ![Creative Commons License](https://i.creativecommons.org/l/by-nc/4.0/88x31.png) 
-<br/>This document is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
+<br/>This document is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/) - (by Wikibooks)
