@@ -1,78 +1,65 @@
-# SDCC String BASICs Functions Library (object type)
+# String BASICs SDCC Library (fR3eL project)
 
-Version: 1.0
+<table>
+<tr><td>Architecture</td><td>MSX</td></tr>
+<tr><td>Format</td><td>C Object (SDCC .rel)</td></tr>
+<tr><td>Programming language</td><td>C and Z80 assembler</td></tr>
+<tr><td>Compiler</td><td>SDCC v4.4 or newer</td></tr>
+</table>
 
-Date: 24/07/2018
+---
 
-Author: mvac7/303bcn
+## Description
 
-Architecture: MSX
+Library with basic functions for the managing C Strings (array of characters) and functions similar to those of the MSX BASIC.
 
-Format: C Object (SDCC .rel)
+**Warning:** To optimize resources, it only accepts strings with a maximum length of 255 characters, except for the __StrCopy__ and __StrConcatenate__ functions.
+If you need to work with larger strings, you can change the input values of type __char__ to __unsigned int__.
 
-Programming language: C
+Remember that if you don't find the functions you need, you can use the C String standard library.
 
-WEB:
- 
-mail: mvac7303b@gmail.com
+You can access the documentation here with [`How to use the library`](docs/HOWTO.md).
 
+In the source code [`examples/`](examples/), you can find applications for testing and learning purposes.
 
-History of versions:
+This project is an Open Source library. 
+You can add part or all of this code in your application development or include it in other libraries/engines.
+
+Use them for developing MSX applications using Small Device C Compiler [`SDCC`](http://sdcc.sourceforge.net/).
+
+This library is part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
+
+Enjoy it!
+
+<br/>
+
+---
+
+## History of versions
+- v1.2 (12/ 1/2025) Update to SDCC (4.1.12) Z80 calling conventions
+- v1.1 (20/12/2023) Rename some functions and remove SPACE
 - v1.0 (24/07/2018)< First version 
 
 
+<br/>
 
-## 1. Introduction
+---
 
-This project is an Open Source library with basic functions for the treatment 
-of arrays of characters and functions similar to those of the MSX BASIC.
+## Requirements
 
-For reasons of optimization, they work with 8-bit types (char) so the strings 
-can only have up to 256 characters. If you need to work with larger strings, 
-you can change the variables of type [char] to [unsigned int].
-  
-Use them for developing MSX applications using Small Device C Compiler (SDCC).
-
-Includes an application for test and learning purposes.
+- [Small Device C Compiler (SDCC) v4.4](http://sdcc.sourceforge.net/)
+- [Hex2bin v2.5](http://hex2bin.sourceforge.net/)
 
 
 
-## 2. Acknowledgments
-  
-Thanks for Info & help, to:
+## Functions
 
-* Avelino Herrera > http://msx.atlantes.org/index_es.html
-* Nerlaska > http://albertodehoyonebot.blogspot.com.es
-* Fubu > http://www.gamerachan.org/fubu/
-* Marq/Lieves!Tuore > http://www.kameli.net/lt/
-* Sapphire/Z80ST > http://z80st.auic.es/
-* Pentacour > http://pentacour.com/
-* JamQue/TPM > http://www.thepetsmode.com/
-* Andrear > http://andrear.altervista.org/home/msxsoftware.php
-* Konamiman > https://www.konamiman.com
-* MSX Assembly Page > http://map.grauw.nl/resources/msxbios.php
-* Portar MSX Tech Doc > http://nocash.emubase.de/portar.htm
-* MSX Resource Center > http://www.msx.org/
-* Karoshi MSX Community > http://karoshi.auic.es/
-* BlueMSX >> http://www.bluemsx.com/
-* OpenMSX >> http://openmsx.sourceforge.net/
-* Meisei  >> ?
+* StrLength(char* source)=char - Returns the length of a string
+* StrCopy(char* target, char* source) - Copy the source string on the target string
+* StrConcatenate(char* target, char* source) - Appends a copy of the source string to the target string
+* StrCompare(char* string1, char* string2)=boolean - Compare two strings
 
 
-
-## 3. Requirements
-
-* Small Device C Compiler (SDCC) v3.6 http://sdcc.sourceforge.net/
-* Hex2bin v2.2 http://hex2bin.sourceforge.net/ 
-
-
-
-## 4. Functions
-
-* strlen(char* source)=char - Returns the length of a string
-* strcpy(char* target, char* source) - Copy the source string on the target string
-* strcat(char* target, char* source) - Appends a copy of the source string to the target string
-* strcmp(char* string1, char* string2)=boolean - Compare two strings 
 * LEFT(char* target, char* source, char length) - Returns a section of the source string with the given length. Similar as MSX BASIC instruction LEFT$ 
 * RIGHT(char* target, char* source, char rightLength) - Returns a section to the right of the source string with the given length. Similar as MSX BASIC instruction RIGHT$
 * MID(char* target, char* source, char leftPos, char length) - Returns a section of the source string from the given position and length. Similar as MSX BASIC instruction MID$

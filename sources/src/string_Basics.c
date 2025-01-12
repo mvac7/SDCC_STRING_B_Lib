@@ -1,94 +1,102 @@
 /* =============================================================================
-   SDCC String BASICs Functions Library (object type)
-   Version: 1.0
-   Date: 24/07/2018
-   Author: mvac7/303bcn
-   Architecture: MSX
-   Format: C Object (SDCC .rel)
-   Programming language: C
-   WEB: 
-   mail: mvac7303b@gmail.com
+String Basics Functions SDCC Library (fR3eL Project)
+Version: 1.2 (12/1/2025)
+Author: mvac7/303bcn
+Architecture: MSX
+Format: C object (SDCC .rel)
+Programming language: C
+Compiler: SDCC 4.4 or newer
 
-   Description:
-     Basic functions for the treatment of arrays of characters and 
-     functions similar to those of the MSX BASIC.
-   
-   History of versions:
-   - v1.0 (24/07/2018)< current version 
+fR3eL Project
+https://github.com/mvac7/SDCC_MSX_fR3eL
+
+Description:
+	Selection of functions for managing C Strings (array of characters). 
+	Includes functions similar to those of MSX BASIC.
+	
+	Remember that if you don't find the functions you need, 
+	you can use the C String standard library.
+ 
+	Warning: To optimize resources, it only accepts strings with a 
+			 maximum length of 256 characters, except for the 
+			 StrCopy and StrConcatenate functions.
+
+History of versions:
+- v1.2 (12/ 1/2025) Update to SDCC (4.1.12) Z80 calling conventions
+- v1.1 (20/12/2023) Rename some functions and remove SPACE
+- v1.0 (24/07/2018) first version
 ============================================================================= */
 
 
-//https://en.wikibooks.org/wiki/C_Programming/String_manipulation
 
-
-#include "../include/stringB.h"
+#include "../include/string_Basics.h"
 
 
 
 /* =============================================================================
- strlen
+	StrLength (same as strlen)
 
- Function : Returns the length of a string 
- Input    : [char*] string       
- Output   : [char] length 
+	Function:	Returns the length of a string 
+	Input:		[char*] string       
+	Output:		[char] length 
 ============================================================================= */
-char strlen(char* source)
+char StrLength(char* source)
 {
-  char length = 0;
-  while(*(source++)) length++;
-  return length;
+	char length = 0;
+	while(*(source++)) length++;
+	return length;
 } 
 
 
 
 /* =============================================================================
- strcpy
-
- Function : Copy the source string on the target string. 
- Input    : [char*] target string
-            [char*] source string        
- Output   : -  
+	StrCopy (same as strcpy)
+	Function:	Copy the source string on the target string. 
+	Input:		[char*] target string
+				[char*] source string        
+	Output:		-  
 ============================================================================= */
-void strcpy(char* target, char* source) 
+void StrCopy(char* target, char* source) 
 {
-    while (*target++ = *source++);
+    while ((*target++ = *source++) != '\0');
 }
 
 
 
 /* =============================================================================
- strcat
+	StrConcatenate (same as strcat)
 
- Function : Appends a copy of the source string to the target string. 
- Input    : [char*] target string
-            [char*] source string          
- Output   : -  
+	Function:	Concatenate a copy of the source string to the destination string.
+				target = target + source 
+	Input:		[char*] target string
+				[char*] source string          
+	Output:		-  
 ============================================================================= */
-void strcat(char* target, char* source) 
+void StrConcatenate(char* target, char* source) 
 {
-    while( *target ) target++;        /* find end of dst */
-    while( *target++ = *source++ ) ;  /* Copy src to end of dst */
+    while( *target ) target++;        /* find end of target */
+    while( *target++ = *source++ ) ;  /* Copy source to end of target */
 }
 
 
 
 /* =============================================================================
- strcmp
+ StrCompare (same as strcmp)
 
- Function : Compare two strings 
+ Function : Compare two strings
  Input    : [char*] first string
             [char*] second string         
  Output   : [boolean] result  
 ============================================================================= */
-boolean strcmp(char* string1, char* string2)
+boolean StrCompare(char* string1, char* string2)
 {
-  char index = 0;
+	char index = 0;
 
-  while (string1[index]!='\0' && string2[index]!='\0' && string1[index] == string2[index]) index++;
+	while (string1[index]!='\0' && string2[index]!='\0' && string1[index] == string2[index]) index++;
 
-  if (string1[index]!='\0' || string2[index]!='\0') return false;
+	if (string1[index]!='\0' || string2[index]!='\0') return false;
 
-  return true;
+	return true;
 }
 
 
@@ -100,14 +108,14 @@ boolean strcmp(char* string1, char* string2)
             Similar as MSX BASIC instruction LEFT$ 
  Input    : [char*] target string
             [char*] source string
-            [char] length        
+            [char]  length        
  Output   : -  
 ============================================================================= */
 void LEFT(char* target, char* source, char length)
 {
-  if (strlen(source)<length) return;              //size check
-  while (length-->0) *target++ = *source++;  //copy
-  *target = '\0';
+	if (StrLength(source)<length) return;              //size check
+	while (length-->0) *target++ = *source++;  //copy
+	*target = '\0';
 }
 
 
@@ -120,21 +128,22 @@ void LEFT(char* target, char* source, char length)
             Similar as MSX BASIC instruction RIGHT$  
  Input    : [char*] target string
             [char*] source string
-            [char] length         
+            [char]  length         
  Output   : -  
 ============================================================================= */
-void RIGHT(char* target, char* source, char rightLength)
+void RIGHT(char* target, char* source, char length)
 {
-  char i;
-  char pos;
-  char sourceLength = strlen(source);
-  
-  if (sourceLength<rightLength) return; //size check
-  pos=sourceLength-rightLength;
-  
-  for (i=0;i<pos;i++) source++;   //positioning
-  while (*target++ = *source++); //copy
-  *target = '\0';
+	char i;
+	char pos;
+	char sourceLength = StrLength(source);
+
+	if (sourceLength<length) return; //size check
+
+	pos=sourceLength-length;
+
+	for (i=0;i<pos;i++) source++;	//positioning
+	while (*target++ = *source++);	//copy
+	*target = '\0';
 }
 
 
@@ -155,7 +164,7 @@ void MID(char* target, char* source, char leftPos, char length)
 {
   char i;
 
-  char sourceLength = strlen(source);
+  char sourceLength = StrLength(source);
   if (sourceLength<leftPos) return; //size check
   if (length>(sourceLength-leftPos)) length=sourceLength-leftPos;
 
@@ -212,12 +221,12 @@ void STRING(char* target, char length, char asciicode)
  SPACE
 
  Function : Generates a string composed with spaces
-            Similar as MSX BASIC instruction SPACE$ 
+            Similar as MSX BASIC instruction SPC$ 
  Input    : [char*] target string
             [char] length        
  Output   : -  
 ============================================================================= */
-void SPACE(char* target, char length) 
+/*void SPACE(char* target, char length) 
 {
   STRING(target, length, 32); 
-}
+}*/

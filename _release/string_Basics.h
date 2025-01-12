@@ -1,20 +1,8 @@
 /* =============================================================================
-   SDCC String BASICs Functions Library (object type)
-   Version: 1.0
-   Date: 24/07/2018
-   Author: mvac7/303bcn
-   Architecture: MSX
-   Format: C Object (SDCC .rel)
-   Programming language: C
-   WEB: 
-   mail: mvac7303b@gmail.com
-
-   Description:
-     Basic functions for the treatment of arrays of characters and 
-     functions similar to those of the MSX BASIC.
-   
-   History of versions:
-   - v1.0 (24/07/2018)< first version
+String BASICs Functions SDCC Library (fR3eL Project)
+Selection of functions for managing C Strings (array of characters). 
+Includes functions similar to those of MSX BASIC.
+https://github.com/mvac7/SDCC_MSX_fR3eL
 ============================================================================= */
 
 #ifndef __STRINGB_H__
@@ -33,50 +21,50 @@
 
 
 /* =============================================================================
- strlen
+ StrLength
 
  Function : Returns the length of a string 
  Input    : [char*] string       
  Output   : [char] length 
 ============================================================================= */
-char strlen(char* source);
+char StrLength(char* source);
 
 
 
 /* =============================================================================
- strcpy
+ StrCopy
 
  Function : Copy the source string on the target string. 
  Input    : [char*] target string
             [char*] source string        
  Output   : -  
 ============================================================================= */
-void strcpy(char* target, char* source);
+void StrCopy(char* target, char* source);
 
 
 
 /* =============================================================================
- strcat
+ StrConcatenate
 
  Function : Appends a copy of the source string to the target string. 
  Input    : [char*] target string
             [char*] source string          
  Output   : -  
 ============================================================================= */
-void strcat(char* target, char* source);
+void StrConcatenate(char* target, char* source);
 
 
 
 
 /* =============================================================================
- strcmp
+ StrCompare
 
  Function : Compare two strings 
  Input    : [char*] first string
             [char*] second string         
  Output   : [boolean] result  
 ============================================================================= */
-boolean strcmp(char* string1, char* string2);
+boolean StrCompare(char* string1, char* string2);
 
 
 
@@ -87,7 +75,7 @@ boolean strcmp(char* string1, char* string2);
             Similar as MSX BASIC instruction LEFT$ 
  Input    : [char*] target string
             [char*] source string
-            [char] length        
+            [char]  length        
  Output   : -  
 ============================================================================= */
 void LEFT(char* target, char* source, char length);
@@ -102,10 +90,10 @@ void LEFT(char* target, char* source, char length);
             Similar as MSX BASIC instruction RIGHT$  
  Input    : [char*] target string
             [char*] source string
-            [char] length         
+            [char]  length         
  Output   : -  
 ============================================================================= */
-void RIGHT(char* target, char* source, char rightLength);
+void RIGHT(char* target, char* source, char length);
 
 
 
@@ -117,8 +105,8 @@ void RIGHT(char* target, char* source, char rightLength);
             Similar as MSX BASIC instruction MID$  
  Input    : [char*] target string
             [char*] source string
-            [char] position
-            [char] length        
+            [char]  position
+            [char]  length        
  Output   : -  
 ============================================================================= */
 void MID(char* target, char* source, char leftPos, char length);
@@ -162,7 +150,7 @@ void STRING(char* target, char length, char asciicode);
             [char] length        
  Output   : -  
 ============================================================================= */
-void SPACE(char* target, char length);
+//void SPACE(char* target, char length);
 
 
 
