@@ -81,8 +81,8 @@ true  | 1
 <tr><th colspan=3 align="left">StrLength</th></tr>
 <tr><td colspan=3>Returns the length of a string</td></tr>
 <tr><th>Function</th><td colspan=2>char StrLength(char* source)</td></tr>
-<tr><th>Input</th><td>[char*]</td><td>string</td></tr>
-<tr><th>Output</th><td>[char]</td><td>length</td></tr>
+<tr><th>Input</th><td><pre>char*</pre></td><td>string</td></tr>
+<tr><th>Output</th><td><pre>char</pre></td><td>length</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>char result;<br/>result=StrLength("Hello World!");	//result=12</pre></td></tr>
 </table>
 
@@ -94,12 +94,12 @@ true  | 1
 <tr><th colspan=3 align="left">StrCopy</th></tr>
 <tr><td colspan=3>Copy the source string on the target string</td></tr>
 <tr><th>Function</th><td colspan=2>StrCopy(char* target, char* source)</td></tr>
-<tr><th rowspan=2>Input</th><td>`char*`</td><td>target string</td></tr>
-<tr><td>`char*`</td><td>source string</td></tr>
+<tr><th rowspan=2>Input</th><td><pre>char*</pre></td><td>target string</td></tr>
+<tr><td><pre>char*</pre></td><td>source string</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
-char text[60];<br/>
-char string[] = "Lorem ipsum dolor sit amet";<br/>
+char text[60];
+char string[] = "Lorem ipsum dolor sit amet";
 StrCopy(text,string);
 </pre></td></tr>
 </table>
@@ -112,8 +112,8 @@ StrCopy(text,string);
 <tr><th colspan=3 align="left">StrConcatenate</th></tr>
 <tr><td colspan=3>Appends a copy of the source string to the target string</td></tr>
 <tr><th>Function</th><td colspan=2>StrConcatenate(char* target, char* source)</td></tr>
-<tr><th rowspan=2>Input</th><td>`char*`</td><td>target string</td></tr>
-<tr><td>`char*`</td><td>source string</td></tr>
+<tr><th rowspan=2>Input</th><td><pre>char*</pre></td><td>target string</td></tr>
+<tr><td><pre>char*</pre></td><td>source string</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>char text[60];<br/>char string[] = "Lorem ipsum dolor sit amet";<br/>char testCat[] = ", consectetur adipiscing elit.";<br/>StrCopy(text,string);<br/>StrConcatenate(text,testCat);</pre></td></tr>
 </table>
@@ -125,9 +125,9 @@ StrCopy(text,string);
 <tr><th colspan=3 align="left">StrCompare</th></tr>
 <tr><td colspan=3>Compare two strings</td></tr>
 <tr><th>Function</th><td colspan=2>boolean StrCompare(char* string1, char* string2)</td></tr>
-<tr><th rowspan=2>Input</th><td>`char*`</td><td>first string</td></tr>
-<tr><td>`char*`</td><td>second string</td></tr>
-<tr><th>Output</th><td>`boolean`</td><td>result</td></tr>
+<tr><th rowspan=2>Input</th><td><pre>char*</pre></td><td>first string</td></tr>
+<tr><td><pre>char*</pre></td><td>second string</td></tr>
+<tr><th>Output</th><td><pre>boolean</pre></td><td>result</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>result = StrCompare("turboR","MSX3");	//must return false<br/>
 boolean result;
 result = StrCompare("TMS9918A","tms9918a");	//must return false<br/>
@@ -142,9 +142,9 @@ result = StrCompare("EqU4L","EqU4L");	//must return true<br/></pre></td></tr>
 <tr><th colspan=3 align="left">LEFT</th></tr>
 <tr><td colspan=3>Returns a section of the source string with the given length<br/>Similar as MSX BASIC instruction LEFT$</td></tr>
 <tr><th>Function</th><td colspan=2>LEFT(char* target, char* source, char length)</td></tr>
-<tr><th rowspan=3>Input</th><td>`char*`</td><td>target string</td></tr>
-<tr><td>`char*`</td><td>source string</td></tr>
-<tr><td>`char`</td><td>length</td></tr>
+<tr><th rowspan=3>Input</th><td><pre>char*</pre></td><td>target string</td></tr>
+<tr><td><pre>char*</pre></td><td>source string</td></tr>
+<tr><td><pre>char</pre></td><td>length</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
 char text[60];<br/>
@@ -161,9 +161,9 @@ LEFT(text,string1,11);	//text="Lorem ipsum"
 <tr><th colspan=3 align="left">RIGHT</th></tr>
 <tr><td colspan=3>Returns a section to the right of the source string with the given length.<br/>Similar as MSX BASIC instruction RIGHT$</td></tr>
 <tr><th>Function</th><td colspan=2>RIGHT(char* target, char* source, char length)</td></tr>
-<tr><th rowspan=3>Input</th><td>`char*`</td><td>target string</td></tr>
-<tr><td>`char*`</td><td>source string</td></tr>
-<tr><td>`char`</td><td>length</td></tr>
+<tr><th rowspan=3>Input</th><td><pre>char*</pre></td><td>target string</td></tr>
+<tr><td><pre>char*</pre></td><td>source string</td></tr>
+<tr><td><pre>char</pre></td><td>length</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
 char text[60];<br/>
@@ -180,10 +180,10 @@ RIGHT(text,string1,16);	//text="adipiscing elit."
 <tr><th colspan=3 align="left">MID</th></tr>
 <tr><td colspan=3>Returns a section of the source string from the given position and length.<br/>Similar as MSX BASIC instruction MID$</td></tr>
 <tr><th>Function</th><td colspan=2>MID(char* target, char* source, char leftPos, char length)</td></tr>
-<tr><th rowspan=4>Input</th><td>`char*`</td><td>target string</td></tr>
-<tr><td>`char*`</td><td>source string</td></tr>
-<tr><td>`char`</td><td>position</td></tr>
-<tr><td>`char`</td><td>length</td></tr>
+<tr><th rowspan=4>Input</th><td><pre>char*</pre></td><td>target string</td></tr>
+<tr><td><pre>char*</pre></td><td>source string</td></tr>
+<tr><td><pre>char</pre></td><td>position</td></tr>
+<tr><td><pre>char</pre></td><td>length</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
 char text[60];<br/>
@@ -200,10 +200,10 @@ MID(text,string1,12,14);	//text="dolor sit amet"
 <tr><th colspan=3 align="left">INSTR</th></tr>
 <tr><td colspan=3>Find the first occurrence of a character in the given string.<br/>Similar as MSX BASIC instruction INSTR</td></tr>
 <tr><th>Function</th><td colspan=2>char INSTR(char* source, char asciicode, char offset)</td></tr>
-<tr><th rowspan=3>Input</th><td>`char*`</td><td>source string</td></tr>
-<tr><td>`char`</td><td>ascii code</td></tr>
-<tr><td>`char`</td><td>offset</td></tr>
-<tr><th>Output</th><td>[char]</td><td>position</td></tr>
+<tr><th rowspan=3>Input</th><td><pre>char*</pre></td><td>source string</td></tr>
+<tr><td><pre>char</pre></td><td>ascii code</td></tr>
+<tr><td><pre>char</pre></td><td>offset</td></tr>
+<tr><th>Output</th><td><pre>char</pre></td><td>position</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
 char result;<br/>
 char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";<br/>
@@ -220,9 +220,9 @@ result=INSTR(string1,32,7);		//result=12
 <tr><th colspan=3 align="left">STRING</th></tr>
 <tr><td colspan=3>Generates a string, composed with same char.<br/>Similar as MSX BASIC instruction STRING$</td></tr>
 <tr><th>Function</th><td colspan=2>STRING(char* target, char length, char asciicode)</td></tr>
-<tr><th rowspan=3>Input</th><td>`char*`</td><td>target string</td></tr>
-<tr><td>`char`</td><td>length</td></tr>
-<tr><td>`char`</td><td>asciicode</td></tr>
+<tr><th rowspan=3>Input</th><td><pre>char*</pre></td><td>target string</td></tr>
+<tr><td><pre>char</pre></td><td>length</td></tr>
+<tr><td><pre>char</pre></td><td>asciicode</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
 char text[20];<br/>
