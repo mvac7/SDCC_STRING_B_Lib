@@ -1,4 +1,4 @@
-# How to use the String BASICs SDCC Library
+# How to use the String Basics SDCC Library
 
 | Attention! |
 | :---       |

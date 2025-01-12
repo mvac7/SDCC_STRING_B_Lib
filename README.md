@@ -1,4 +1,4 @@
-# String BASICs SDCC Library (fR3eL project)
+# String Basics SDCC Library (fR3eL project)
 
 <table>
 <tr><td>Architecture</td><td>MSX</td></tr>
@@ -50,7 +50,9 @@ Enjoy it!
 - [Small Device C Compiler (SDCC) v4.4](http://sdcc.sourceforge.net/)
 - [Hex2bin v2.5](http://hex2bin.sourceforge.net/)
 
+<br/>
 
+---
 
 ## Functions
 
