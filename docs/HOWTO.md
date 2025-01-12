@@ -83,7 +83,10 @@ true  | 1
 <tr><th>Function</th><td colspan=2>char StrLength(char* source)</td></tr>
 <tr><th>Input</th><td><pre>char*</pre></td><td>string</td></tr>
 <tr><th>Output</th><td><pre>char</pre></td><td>length</td></tr>
-<tr><th>Example:</th><td colspan=2><pre>char result;<br/>result=StrLength("Hello World!");	//result=12</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>
+char result;
+result=StrLength("Hello World!");	//result=12
+</pre></td></tr>
 </table>
 
 
@@ -115,7 +118,13 @@ StrCopy(text,string);
 <tr><th rowspan=2>Input</th><td><pre>char*</pre></td><td>target string</td></tr>
 <tr><td><pre>char*</pre></td><td>source string</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
-<tr><th>Example:</th><td colspan=2><pre>char text[60];<br/>char string[] = "Lorem ipsum dolor sit amet";<br/>char testCat[] = ", consectetur adipiscing elit.";<br/>StrCopy(text,string);<br/>StrConcatenate(text,testCat);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>
+char text[60];
+char string[] = "Lorem ipsum dolor sit amet";
+char testCat[] = ", consectetur adipiscing elit.";
+StrCopy(text,string);
+StrConcatenate(text,testCat);
+</pre></td></tr>
 </table>
 
 
@@ -128,11 +137,13 @@ StrCopy(text,string);
 <tr><th rowspan=2>Input</th><td><pre>char*</pre></td><td>first string</td></tr>
 <tr><td><pre>char*</pre></td><td>second string</td></tr>
 <tr><th>Output</th><td><pre>boolean</pre></td><td>result</td></tr>
-<tr><th>Example:</th><td colspan=2><pre>result = StrCompare("turboR","MSX3");	//must return false<br/>
+<tr><th>Example:</th><td colspan=2><pre>
 boolean result;
-result = StrCompare("TMS9918A","tms9918a");	//must return false<br/>
-result = StrCompare("1234567890","1234");	//must return false<br/>
-result = StrCompare("EqU4L","EqU4L");	//must return true<br/></pre></td></tr>
+result = StrCompare("turboR","MSX3");		//must return false
+result = StrCompare("TMS9918A","tms9918a");	//must return false
+result = StrCompare("1234567890","1234");	//must return false
+result = StrCompare("EqU4L","EqU4L");		//must return true
+</pre></td></tr>
 </table>
 
 
@@ -147,8 +158,8 @@ result = StrCompare("EqU4L","EqU4L");	//must return true<br/></pre></td></tr>
 <tr><td><pre>char</pre></td><td>length</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
-char text[60];<br/>
-char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";<br/>
+char text[60];
+char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 LEFT(text,string1,11);	//text="Lorem ipsum"
 </pre></td></tr>
 </table>
@@ -166,8 +177,8 @@ LEFT(text,string1,11);	//text="Lorem ipsum"
 <tr><td><pre>char</pre></td><td>length</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
-char text[60];<br/>
-char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";<br/>
+char text[60];
+char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 RIGHT(text,string1,16);	//text="adipiscing elit."
 </pre></td></tr>
 </table>
@@ -186,8 +197,8 @@ RIGHT(text,string1,16);	//text="adipiscing elit."
 <tr><td><pre>char</pre></td><td>length</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
-char text[60];<br/>
-char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";<br/>
+char text[60];
+char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 MID(text,string1,12,14);	//text="dolor sit amet"
 </pre></td></tr>
 </table>
@@ -205,9 +216,9 @@ MID(text,string1,12,14);	//text="dolor sit amet"
 <tr><td><pre>char</pre></td><td>offset</td></tr>
 <tr><th>Output</th><td><pre>char</pre></td><td>position</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
-char result;<br/>
-char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";<br/>
-result=INSTR(string1,' ',0);	//result=6<br/>
+char result;
+char string1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+result=INSTR(string1,' ',0);	//result=6
 result=INSTR(string1,32,7);		//result=12
 </pre></td></tr>
 </table>
@@ -225,7 +236,7 @@ result=INSTR(string1,32,7);		//result=12
 <tr><td><pre>char</pre></td><td>asciicode</td></tr>
 <tr><th>Output</th><td colspan=2>--</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>
-char text[20];<br/>
+char text[20];
 STRING(text,20,'-');	//text="--------------------"
 </pre></td></tr>
 </table>
